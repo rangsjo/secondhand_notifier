@@ -3,3 +3,4 @@ beautifulsoup4
 sentence-transformers
 numpy
 aiohttp
+blocket-api
