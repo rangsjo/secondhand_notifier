@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  begagnat_bevakare:
+    build: .
+    container_name: begagnat_bevakare
+
+    volumes: []
+#     - .:/app   # Mounta lokal kod in i containern
+
+    environment:
+      - HA_URL=http://homeassistant.local:8123   # ÄNDRA till din HA IP
+      - WEBHOOK_ID=begagnat_match
+      - SCAN_INTERVAL=300
+      - PYTHONUNBUFFERED=1               # Viktigt för att se logs direkt
+
+    restart: unless-stopped
